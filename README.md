@@ -54,12 +54,12 @@ const logger = new Logger({
 });
 
 logger.groupCollapsed("折叠信息1");
-logger.log("log");
-logger.groupCollapsed("折叠信息2");
-logger.error("error");
-logger.debug("debug");
-logger.groupEnd("end");
-logger.warn("warn");
+  logger.log("log");
+  logger.groupCollapsed("折叠信息2");
+    logger.error("error");
+    logger.debug("debug");
+  logger.groupEnd("end");
+  logger.warn("warn");
 logger.groupEnd("end");
 ```
 
