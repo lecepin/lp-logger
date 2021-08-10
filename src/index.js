@@ -19,12 +19,11 @@ export default class Logger {
       this.level = level;
     }
 
-    this.inGroup = false;
     this.name = name;
     this.COLOR_MAP = {
       error: "#f5222d", // 红
       debug: "#7f8c8d", // 灰
-      log: "#8c8c8c", // 绿
+      log: "#52c41a", // 绿
       warn: "#faad14", // 黄
       groupCollapsed: "#2f54eb", // 蓝
       groupEnd: null,
@@ -54,20 +53,11 @@ export default class Logger {
       }
     }
 
-    const logPrefix = this.inGroup
-      ? []
-      : [
-          "%c" + this.name,
-          `background:${this.COLOR_MAP[method]};border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em`,
-        ];
+    const logPrefix = [
+      "%c" + this.name,
+      `background:${this.COLOR_MAP[method]};border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em`,
+    ];
 
     console[method](...logPrefix, ...args);
-
-    if (method === "groupCollapsed") {
-      this.inGroup = true;
-    }
-    if (method === "groupEnd") {
-      this.inGroup = false;
-    }
   }
 }

@@ -1,12 +1,21 @@
 {
   "name": "lp-logger",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "pack": "webpack --config webpack.config.js"
   },
   "author": "lecepin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lecepin/lp-logger.git"
+  },
+  "keywords": [
+    "logger",
+    "console",
+    "browser"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
