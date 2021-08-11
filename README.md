@@ -7,15 +7,31 @@
 
 ![](https://img.alicdn.com/imgextra/i4/O1CN01rU3ORV1Ms0RPsHmP4_!!6000000001489-2-tps-1350-476.png)
 
-## 1.安装
+## 1.API
 
+```ts
+declare module "lp-logger" {
+  type Level = "error" | "warn" | "log";
+
+  interface IProp {
+    level?: Level;
+    name?: string;
+    search?: string;
+  }
+
+  export default class Logger {
+    constructor(prop?: IProp);
+    log(...args: any[]): void;
+    warn(...args: any[]): void;
+    error(...args: any[]): void;
+    debug(...args: any[]): void;
+    groupCollapsed(...args: any[]): void;
+    groupEnd(...args: any[]): void;
+  }
+}
 ```
-npm i -S lp-logger
-```
 
-## 2.API
-
-#### 2.1 类方法
+#### 1.1 构造方法
 
 ```
 constructor({
@@ -31,7 +47,7 @@ constructor({
 | name   | 输出日志中，颜色块的上文本                                                                                                                                                      | `lp-logger`         |
 | search | 用于通过 URL 参数控制显示级别，值与 `level` 的一致                                                                                                                              | `__lp_logger_level` |
 
-#### 2.2 实例方法
+#### 1.2 实例方法
 
 | 名称           | 说明                                                         |
 | -------------- | ------------------------------------------------------------ |
@@ -42,14 +58,34 @@ constructor({
 | groupCollapsed | 同 console.groupCollapsed，用于创建 log 折叠分组，可嵌套折叠 |
 | groupEnd       | 同 console.groupEnd，用于关闭 log 折叠分组                   |
 
+## 2.安装
+
+支持 CDN 安装和 NPM 安装。
+
+### 2.1 CDN 安装
+
+```html
+<script src="https://unpkg.com/lp-logger"></script>
+
+<script>
+  // new LpLogger();
+</script>
+```
+
+### 2.2 NPM 安装
+
+```
+npm i -S lp-logger
+```
+
 ## 3.使用
 
 #### 3.1 折叠信息
 
 ```js
-import Logger from "lp-logger";
+import LpLogger from "lp-logger";
 
-const logger = new Logger({
+const logger = new LpLogger({
   name: "项目A",
 });
 
@@ -68,9 +104,9 @@ logger.groupEnd("end");
 #### 3.2 只显示错误和警告信息
 
 ```js
-import Logger from "lp-logger";
+import LpLogger from "lp-logger";
 
-const logger = new Logger({
+const logger = new LpLogger({
   name: "项目B",
   level: "warn",
 });
@@ -86,9 +122,9 @@ logger.warn("warn");
 #### 3.3 URL 控制显示
 
 ```js
-import Logger from "lp-logger";
+import LpLogger from "lp-logger";
 
-const logger = new Logger({
+const logger = new LpLogger({
   name: "项目C",
   level: "", // 空字符串时，不显示任何信息
   search: "__lp_logger_level", // 配置 URL 控制参数
