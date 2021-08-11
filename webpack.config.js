@@ -6,7 +6,7 @@ const umdConfig = {
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
-    library: "lpFileNameSort",
+    library: "LpLogger",
     libraryTarget: "umd",
     libraryExport: "default",
     globalObject: "this",
@@ -21,7 +21,7 @@ const esmConfig = {
   output: {
     filename: "index.esm.js",
     path: path.resolve(__dirname, "dist"),
-    library: "lpFileNameSort",
+    library: "LpLogger",
     libraryTarget: "var",
     globalObject: "this",
   },
