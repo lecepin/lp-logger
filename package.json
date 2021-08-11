@@ -1,6 +1,6 @@
 {
   "name": "lp-logger",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "console",
     "browser"
   ],
+  "typings": "src/index.d.ts",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
