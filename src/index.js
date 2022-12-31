@@ -10,11 +10,7 @@ export default class Logger {
         level = "log",
         name = "lp-logger",
     } = {}) {
-        if (Array.from(qs.keys()).includes(search)) {
-            this.level = qs.get(search);
-        } else {
-            this.level = level;
-        }
+        this.level = level;
         this.name = name;
         this.COLOR_MAP = {
             error: "#f5222d", // 红
