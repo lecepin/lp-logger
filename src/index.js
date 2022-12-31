@@ -13,9 +13,7 @@ export default class Logger {
     } = {}) {
         this.level = level;
         this.name = name;
-        Object.keys(this.COLOR_MAP).map((key) => {
-            this[key] = (...args) => this._print(key, args);
-        });
+        Object.keys(this.COLOR_MAP).map((key) => this[key] = (...args) => this._print(key, args));
     }
     COLOR_MAP = {
         error: "#f5222d", // 红
