@@ -1,6 +1,6 @@
 {
   "name": "lp-logger",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "lecepin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lecepin/lp-logger.git"
+    "url": "https://github.com/neila-a/lp-logger.git"
   },
   "keywords": [
     "logger",
