@@ -14,6 +14,7 @@ const umdConfig = {
   module: {
     rules: [{ test: /\.js?$/, exclude: /node_modules/, use: ["babel-loader"] }],
   },
+  mode: "production"
 };
 
 const esmConfig = {
@@ -29,6 +30,7 @@ const esmConfig = {
     rules: [{ test: /\.js?$/, exclude: /node_modules/, use: ["babel-loader"] }],
   },
   plugins: [new EsmWebpackPlugin()],
+  mode: "production"
 };
 
 module.exports = [umdConfig, esmConfig];
