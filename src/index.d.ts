@@ -1,7 +1,7 @@
 declare module "lp-logger" {
-  type Level = "error" | "warn" | "log";
+  export type Level = "error" | "warn" | "log";
 
-  interface IProp {
+  export interface IProp {
     level?: Level;
     name?: string;
     search?: string;
