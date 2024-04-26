@@ -1,10 +1,11 @@
 declare module "lp-logger" {
-    export type Level = "error" | "warn" | "log";
+  export type Level = "error" | "warn" | "log";
 
-    export interface IProp {
-        level?: Level;
-        name?: string;
-    }
+  export interface IProp {
+    level?: Level;
+    name?: string;
+    search?: string;
+  }
 
     export interface COLOR_MAP {
         error: "#f5222d", // 红
