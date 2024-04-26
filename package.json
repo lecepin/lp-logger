@@ -1,29 +1,32 @@
 {
-  "name": "lp-logger",
-  "version": "1.0.8",
-  "description": "",
-  "main": "dist/index.js",
-  "scripts": {
-    "pack": "webpack --config webpack.config.js"
-  },
-  "author": "lecepin",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lecepin/lp-logger.git"
-  },
-  "keywords": [
-    "logger",
-    "console",
-    "browser"
-  ],
-  "typings": "src/index.d.ts",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "@purtuga/esm-webpack-plugin": "^1.2.1",
-    "babel-loader": "^8.1.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
-  }
+    "name": "lp-logger",
+    "version": "1.0.11",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "pack": "webpack --config webpack.config.js"
+    },
+    "author": "lecepin",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lecepin/lp-logger.git"
+    },
+    "keywords": [
+        "logger",
+        "console",
+        "browser"
+    ],
+    "typings": "src/index.d.ts",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.5",
+        "@purtuga/esm-webpack-plugin": "^1.2.1",
+        "babel-loader": "^8.1.0",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.11"
+    },
+    "dependencies": {
+        "moment": "^2.29.4"
+    }
 }
