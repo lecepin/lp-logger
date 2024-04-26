@@ -2,8 +2,8 @@ import moment from "moment";
 export default class Logger {
     /**
      * @param {String} level
-     *    error: 只显示 error
-     *    warn: 显示 warn/error
+     *    error: 只显示 error  
+     *    warn: 显示 warn/error  
      *    log: 显示所有
      * @param {String} name
      */
@@ -11,18 +11,31 @@ export default class Logger {
         level = "log",
         name = "lp-logger",
     } = {}) {
-        this.level = level;
+        if (typeof window !== "undefined") {
+            const qs = new URLSearchParams(window.location.search);
+
+            if (Array.from(qs.keys()).includes(search)) {
+                this.level = qs.get(search);
+            } else {
+                this.level = level;
+            }
+        }
+
         this.name = name;
-        Object.keys(this.COLOR_MAP).map((key) => this[key] = (...args) => this._print(key, args));
+        Object.keys(Logger.COLOR_MAP).map(key => {
+            this[key] = (...args) => this._print(key, args);
+        });
     }
-    COLOR_MAP = {
+
+    static COLOR_MAP = {
         error: "#f5222d", // 红
         debug: "#7f8c8d", // 灰
         log: "#52c41a", // 绿
         warn: "#faad14", // 黄
+        groupCollapsed: "#2f54eb", // 蓝
         groupEnd: null,
-        info: "#52c41a"
     }
+
     _print(method, args) {
         if (this.level === "error") {
             if ("error" != method) {
